@@ -9,16 +9,20 @@ import HomePage from './Components/HomePage.jsx';
 import AddQuiz from './Components/AddQuiz.jsx';
 import PlayQuiz from './Components/PlayQuiz.jsx';
 import ViewQuiz from './Components/ViewQuiz.jsx';
+import Login from './Components/Login.jsx';
+import Register from './Components/Register.jsx';
 
 createRoot(document.getElementById('root')).render(
   <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<RootLayout/>} >
+      <Route element={<RootLayout/>} >
       <Route path='/' element={<HomePage/>} />
       <Route path='/add-quiz' element={<AddQuiz/>} />
       <Route path='/play-quiz' element={<PlayQuiz/>} />
       <Route path='/view-quiz' element={<ViewQuiz/>} />
+      <Route path='/login' element={<Login/>} />
+      <Route path='/register' element={<Register/>} />
       </Route>
     </Routes>
     </BrowserRouter>

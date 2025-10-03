@@ -22,6 +22,8 @@ export default function
 
   }  
   set(ref(db, 'quizzes/' + Date.now()),data);
+
+  e.target.reset()
 }
 
 

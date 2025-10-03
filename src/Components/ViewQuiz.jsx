@@ -1,29 +1,17 @@
 import { getDatabase, onValue, ref } from 'firebase/database';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import app from '../firebase-config';
+import { Context } from './ContextAPI';
 
 export default function ViewQuiz() {
 
-  const [quizData, setQuizData] = useState([])
+const {quizData, setQuizData, deleteQuiz } = useContext(Context)
 
-  useEffect(() =>{
-    const db = getDatabase(app);
-    const getQuizData = ref(db ,'quizzes/');
-    onValue(ref(db, 'quizzes/'), (snapshot) => {
-      const data = snapshot.val();
-
-      var quizQues = [];
-      for(let index in data ){
-
-        console.log(data[index]);
-        quizQues.push(data[index])
-      }
-
-      setQuizData(quizQues);
-    })
-
-
-  },[])
+// const deleteData = (index)=> {
+// const updatedData = [...quizData];
+// updatedData.splice(index, 1)
+// setQuizData(updatedData)
+// }
 
   return (
 
@@ -62,6 +50,8 @@ export default function ViewQuiz() {
                                                     <td>{ v.option3}</td>
                                                     <td>{ v.option4}</td>
                                                     <td>{ v.correct_option}</td>
+                                                    <td><button onClick={()=>deleteQuiz(i)}>Delete</button></td>
+                                                    
                                                 </tr>
                                             )
                                         })

@@ -20,7 +20,7 @@ export default function HomePage() {
         <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga placeat, eligendi ducimus in, accusamus maxime quisquam facere adipisci provident deleniti officia ut veritatis necessitatibus, neque ratione doloribus. Tempora, ex enim placeat ab voluptas tenetur consequuntur dolores, cupiditate, minima eligendi aut?</p>
         </div>
         <div class="px-2 py-2">
-          <button type="button" class="btn btn-outline-primary">Explore here</button>
+          <button type="button" class="btn btn-outline-primary">Get Started</button>
         </div>
       </div>
     </div>
