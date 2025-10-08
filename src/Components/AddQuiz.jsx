@@ -11,7 +11,8 @@ export default function
   const formHandler = (e)=>{
   e.preventDefault();
   const db = getDatabase(app);
-
+  let userId = new Date().getTime().toString();
+  
   const data = {
     ques: e.target.question.value,
     option1: e.target.option1.value,
@@ -21,7 +22,7 @@ export default function
     correct_option: e.target.correct_option.value,
 
   }  
-  set(ref(db, 'quizzes/' + Date.now()),data);
+  set(ref(db, 'quizzes/' + userId),data);
 
   e.target.reset()
 }

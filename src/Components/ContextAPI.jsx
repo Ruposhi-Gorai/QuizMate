@@ -75,7 +75,7 @@ const deleteQuiz = (quizId) => {
   remove(ref(db, 'quizzes/' + quizId))
     .then(() => {
       // Update local state so UI reflects deletion immediately
-      setQuizData(prev => prev.filter(quiz => quiz.id !== quizId));
+      setQuizData(prev => prev.filter(quiz => quiz.quizId !== quizId));
       toast.success("Quiz deleted successfully");
     })
     .catch((error) => {
