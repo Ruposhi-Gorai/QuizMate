@@ -2,8 +2,18 @@ import { getDatabase, onValue, ref } from 'firebase/database';
 import React, { useContext, useEffect, useState } from 'react'
 import app from '../firebase-config';
 import { Context } from './ContextAPI';
+import { useNavigate } from 'react-router';
 
 export default function ViewQuiz() {
+  const {isLogin} = useContext(Context);
+
+       const navigate = useNavigate();
+  useEffect(()=>{
+    if(isLogin == 0){
+        navigate('/login')
+
+    }
+  }, [])
 
 const {quizData, setQuizData, deleteQuiz } = useContext(Context)
 
@@ -50,8 +60,7 @@ const {quizData, setQuizData, deleteQuiz } = useContext(Context)
                                                     <td>{ v.option3}</td>
                                                     <td>{ v.option4}</td>
                                                     <td>{ v.correct_option}</td>
-                                                    <td><button onClick={()=>deleteQuiz(i)}>Delete</button></td>
-                                                    
+                                                    <td><button onClick={()=>deleteQuiz(v.id)}>Delete</button></td>                                                 
                                                 </tr>
                                             )
                                         })

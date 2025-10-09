@@ -40,7 +40,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="container-fluid py-5 bg-light min-vh-100 d-flex align-items-center">
+      <div className="container-fluid py-5 bg-light my-5 d-flex align-items-center">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 col-lg-5">

@@ -4,13 +4,13 @@ import { useNavigate } from "react-router";
 export default function PlayQuiz() {
   const { isLogin, quizData } = useContext(Context);
 
-  //  const navigate = useNavigate();
-  // useEffect(()=>{
-  //   if(isLogin == 0){
-  //       navigate('/')
+   const navigate = useNavigate();
+  useEffect(()=>{
+    if(isLogin == 0){
+        navigate('/login')
 
-  //   }
-  // }, [])
+    }
+  }, [])
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
